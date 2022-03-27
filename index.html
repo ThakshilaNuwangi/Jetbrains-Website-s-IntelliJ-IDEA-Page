@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliJ IDEA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="shortcut icon" href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F2389%2FPNG%2F512%2Fjetbrains_logo_icon_145150.png&imgrefurl=https%3A%2F%2Ficon-icons.com%2Ficon%2Fjetbrains-logo%2F145150&tbnid=rI2HS8md-aEa-M&vet=12ahUKEwjDv9eric32AhWt_TgGHagrDWIQMygHegUIARDDAQ..i&docid=fn9tqDa3kYO14M&w=512&h=512&q=jetbrains%20logo%20png&ved=2ahUKEwjDv9eric32AhWt_TgGHagrDWIQMygHegUIARDDAQ" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="data:image/png;base64,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" alt="">
+        </div>
+        <div id="navigations">
+            <a href="#">Developer Tools</a>
+            <a href="#">Team Tools</a>
+            <a href="#">Learning Tools</a>
+            <a href="#">Solutions</a>
+            <a href="#">Support</a>
+            <a href="#">Store</a>
+        </div>
+        <div id="icons">
+            <div id="icon"><ion-icon name="search-outline"></ion-icon></div>
+            <div id="icon"><ion-icon name="person"></ion-icon></div>
+            <div id="icon"><ion-icon name="cart-sharp"></ion-icon></div>
+            <div id="icon"><ion-icon name="language-sharp"></ion-icon></div>
+        </div>
+    </header>
+    <div id="menu">
+        <div id="name"><span>IntelliJ IDEA</span></div>
+        <div id="menu-items">
+            <a href="#">Coming in 2022.1</a>
+            <a href="#">What's New</a>
+            <a href="#">Features</a>
+            <a href="#">Resources</a>
+        </div>
+        <div id="buttons">
+            <div id="pricing"><span>Pricing</span></div>
+            <div id="download"><span>Download</span></div>
+        </div>
+    </div>
+
+    <div id="overview">
+        <div class="main-img">
+        <img src="image/beam.svg" alt="">
+    </div>
+        <div id="logo-name">
+        <div id="ij-logo">
+            <img src="https://img.icons8.com/material/452/intellij-idea.png" alt="">
+        </div>
+        <div id="ij-name">
+            <span>IntelliJ IDEA</span>
+        </div>
+        <div id="def">
+            <span>Capable and Ergonomic IDE for JVM</span>
+            <div id="download-button">
+                <span>Download</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="why-intel"></div>  
+    <div id="text-section">
+        <span id="title-1">Why IntelliJ IDEA</span>
+        <span id="title-2">Enjoy Productive Java</span>
+        <span id="text-content">Every aspect of IntelliJ IDEA has been designed to maximize developer productivity. Together, intelligent coding assistance and ergonomic design make development not only productive but also enjoyable.</span>
+        <div id="watch-button">
+            <span>Watch Video</span>
+        </div>
+    </div>
+    
+    
+    <div id="info">
+        <div id="text-area">
+            <span class="text-area-topic">Deep intelligence</span>
+            <span class="text-area-content">After IntelliJ IDEA has indexed your source code, it offers a blazing fast and intelligent experience by giving relevant suggestions in every context: instant and clever code completion, on-the-fly code analysis, and reliable refactoring tools.</span>
+            <span class="text-area-topic">Out-of-the-box experience</span>
+            <span class="text-area-content">Mission-critical tools such as integrated version control systems and a wide variety of supported languages and frameworks are all to hand — no plugin hassle included.</span>
+        </div>
+        <div id="image-1">
+            <img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_5_1.png" alt="">
+        </div>
+        <div id="image-2">
+            <img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_6_1.png" alt="">
+        </div>
+        <div id="image-des-section">
+        <div id="image-des">
+            <img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_7.png" alt="">
+            <span class="text-area-topic">Smart code completion</span>
+            <span class="text-area-content">While the basic completion suggests names of classes, methods, fields, and keywords within the visibility scope, the smart completion suggests only those types that are expected in the current context.</span>
+        </div>
+        <div id="image-des">
+            <img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_8.png" alt="">
+            <span class="text-area-topic">Framework-specific assistance</span>
+            <span class="text-area-content">While IntelliJ IDEA is an IDE for Java, it also understands and provides intelligent coding assistance for a large variety of other languages such as SQL, JPQL, HTML, JavaScript, etc., even if the language expression is injected into a String literal in your Java code.</span>
+        </div>
+        <div id="image-des">
+            <img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_9.png" alt="">
+            <span class="text-area-topic">Productivity boosters</span>
+            <span class="text-area-content">The IDE predicts your needs and automates the tedious and repetitive development tasks, so you can stay focused on the big picture.</span>
+        </div>
+    </div>
+    <div id="text-area-3">
+        <span class="text-area-topic">Developer ergonomics</span>
+            <span class="text-area-content">In every design and implementation decision that we make, we keep in mind the risk of interrupting the developer’s flow and do our best to eliminate or minimize it.</span>
+            <span class="text-area-content">The IDE follows your context and brings up the corresponding tools automatically..</span>
+            <span class="text-area-topic">Unobtrusive intelligence</span>
+            <span class="text-area-content">The coding assistance in IntelliJ IDEA is not about only the editor: it helps you stay productive when dealing with other aspects as well: e.g. filling a field, searching over a list of elements; accessing a tool window; or toggling a setting, etc.</span>
+    </div>
+    <div id="image-4">
+        <img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_2.png" alt="">
+    </div>
+    <div id="image-5">
+        <img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_3.png" alt="">
+    </div>
+    </div>
+   
+    <div class="developers">
+        <div id="developers-topic">
+            <a href="#">3 out of every 4 Java developers choose IntelliJ IDEA</a>
+        </div>
+        <div id="content">
+            <div class="topic">
+                <span>What Developers Say</span>
+            </div>
+            <div id="thoughts">
+                <div class="thought">
+                    <div class="dev-image">
+                        <img src="https://resources.jetbrains.com/storage/testimonials/Mary%20Grygleski.jpg" alt="">
+                        <div class="dev-name">
+                            <span>Mary Grygleski</span>
+                            <span>Software Technologist/Engineer</span>
+                        </div>
+                    </div>
+                    <div class="dev-thought">
+                        <span class="text-area-content">"IntelliJ IDEA is undoubtedly the top-choice IDE for software developers. Efficiency and intelligence are built into the design, which enables a very smooth development workflow experience, from design, implementation, building, deploying, testing, and debugging, to refactoring! It is loaded with features and also offers a plethora of plugins that we can integrate into the editor. I switched to using IntelliJ IDEA 5 years ago and have never looked back.It has certainly made my life easier. I am producing more with less effort."</span>
+                    </div>
+                </div>
+                <div class="thought">
+                    <div class="dev-image">
+                        <img src="https://resources.jetbrains.com/storage/testimonials/Angie%20Jones.jpg" alt="">
+                        <div class="dev-name">
+                            <span>Angie Jones</span>
+                            <span>Senior Developer Advocate</span>
+                            <span>Java Champion</span>
+                        </div>
+                    </div>
+                    <div class="dev-thought">
+                        <span class="text-area-content">"I'm an old school developer, so I didn't move to IntelliJ IDEA when all the cool kids did. However, when I started teaching coding workshops for engineers, the participants asked if they could use it. I realized then that I should try it. Wow, was I missing out! I've been using it extensively ever since and love how efficient it makes me as a developer."</span>
+                    </div>
+                </div>
+                <div class="thought">
+                    <div class="dev-image">
+                        <img src="https://resources.jetbrains.com/storage/testimonials/Mercedes%20Wyss.png" alt="">
+                        <div class="dev-name">
+                            <span>Mercedes Wyss</span>
+                            <span>Groundbreakers Ambassador</span>
+                            <span>CTO</span>
+                        </div>
+                    </div>
+                    <div class="dev-thought">
+                        <span class="text-area-content">"What I like the most about IntelliJ IDEA, far beyond all the technology integrations, shortcuts, and that kind of stuff that makes us more productive, are the simple and smart suggestions. They suggest how to name everything, applying naming conventions that give us best practices, or they give us instructions on how to migrate to new Java features. This is one of the characteristics that I highlight in talks with students."</span>
+                    </div>
+                </div>
+                <div class="thought">
+                    <div class="dev-image">
+                        <img src="https://resources.jetbrains.com/storage/testimonials/Mohamed%20Taman.jpg" alt="">
+                        <div class="dev-name">
+                            <span>Mohamed Tamen</span>
+                            <span>Owner/CEO</span>
+                            <span>Java Champion</span>
+                        </div>
+                    </div>
+                    <div class="dev-thought">
+                        <span class="text-area-content">"I always feel happy and at home when working on my projects using IntelliJ IDEA Ultimate Edition. First of all, it makes me productive and does a lot in a short time. It is like a Swiss Army knife, providing me with all the features and tools I need to finish the task at hand seamlessly and more effectively. And it comes complete with excellent code tips and amazing testing support."</span>
+                    </div>
+                </div>
+            </div>
+            <div id="more-tes">
+                <span>More Testimonials</span>
+            </div>
+        </div>
+    </div>
+    <div id="companies">
+        <div class="topic">
+            <span>Companies worldwide trust IntelliJ IDEA.</span>
+        </div>
+        <div id="brands">
+            <img src="https://www.jetbrains.com/idea/img/logos/expedia.svg" alt="">
+            <img src="https://www.jetbrains.com/idea/img/logos/netflix.svg" alt="">
+            <img src="https://www.jetbrains.com/idea/img/logos/pivotal.svg" alt="">
+            <img src="https://www.jetbrains.com/idea/img/logos/samsung.svg" alt="">
+            <img src="https://www.jetbrains.com/idea/img/logos/twitter.svg" alt="">
+            <img src="https://www.jetbrains.com/idea/img/logos/volkswagen.svg" alt="">
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    
+    
+    <div id="new-features">
+        <div class="topic">
+            <span>New Features</span>
+        </div>
+        <div id="features">
+            <div id="f-1">
+                <img class="f-image" src="https://www.jetbrains.com/idea/img/20213RemoteDevelopment.png" alt="">
+                <div id="f-des">
+                    <span class="f-des-topic">Remote Development</span>
+                    <span class="f-des-content">The Remote Development (Beta) feature allows you to connect to a remote machine that has an IDE backend running on it. You can work on a project located there as if it was on your local machine. You can access Remote Development either from the IDE’s Welcome screen or by downloading the JetBrains Gateway from the Toolbox App.</span>
+                </div>
+            </div>
+            <div id="f-2">
+                <img class="f-image" src="https://www.jetbrains.com/idea/img/20213Troubleshooting.png" alt="">
+                <div id="f-des">
+                    <span class="f-des-topic">Troubleshooting IDE issues</span>
+                    <span class="f-des-content">When your IDE is not working correctly, try out the new Repair IDE... action in the File menu. It provides faster troubleshooting and will guide you through a sequence of steps to resolve some of the most common problems.</span>
+                </div>
+            </div>
+            <div id="f-3">
+                <img class="f-image" src="https://www.jetbrains.com/idea/img/20213DebuggerKotlin.png" alt="">
+                <div id="f-des">
+                    <span class="f-des-topic">Debugger updates for Kotlin</span>
+                    <span class="f-des-content">Kotlin code can be debugged more efficiently now that we’ve added the Smart Step Into action and support for inline stack frames. The Step Into action now works like Smart Step Into, allowing you to stop at any child function included in a given method call. In addition, the debugger can now detect Kotlin inline functions and show their calls in the stack trace panel.</span>
+                </div>
+            </div>
+        </div>
+        <div id="more-button">
+            <span>And Much More...</span>
+        </div>
+    </div>
+    
+    
+    
+    <div id="edition">
+        <div class="topic">
+            <span>Choose Your Edition</span>
+        </div>
+        <div id="edition-table">
+            <table>
+                <tr>
+                  <th>                              </th>
+                  <th>IntelliJ IDEA Ultimate Edition</th>
+                    <th>IntelliJ IDEA Community Edition <ion-icon name="alert-circle"></ion-icon></th>
+                </tr>
+                <tr>
+                  <td>Java, Kotlin, Groovy, Scala</td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                </tr>
+                <tr>
+                  <td>Maven, Gradle, sbt</td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                </tr>
+                <tr>
+                  <td>Git, GitHub, SVN, Mercurial, Perforce</td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                </tr>
+                <tr>
+                    <td>Debugger</td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                  </tr>
+                <tr>
+                  <td>Docker</td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                  <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Profiling tools</a> <ion-icon name="alert-circle"></ion-icon></td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Spring</a>, Jakarta EE, Java EE, Micronaut, Quarkus, Helidon and more <ion-icon name="alert-circle"></ion-icon></ion-icon></td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>HTTP Client</td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>JavaScript, TypeScript, HTML, CSS, Node.js, Angular, React, Vue.js</td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Database Tools, SQL</td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Remote Development (Beta)</td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Collaborative Development</td>
+                    <td><ion-icon name="checkmark-outline"></ion-icon></td>
+                    <td></td>
+                  </tr>
+              </table>
+        </div>
+        <div id="compare-button">
+            <span>Compare Editions</span>
+        </div>
+        <div id="download-button-1">
+            <span>Dowanload</span>
+        </div>
+        <div id="download-button-2">
+            <span>Dowanload</span>
+        </div>
+        <div id="tar-1">
+            <span>tar.gz</span>
+        </div>
+        <div id="tar-2">
+            <span>tar.gz</span>
+        </div>
+        <span id="trial">Free 30-day trial</span>
+        <span id="free">Free, built on open source</span>
+        <div id="edu">
+            <div id="edu-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/512px-IntelliJ_IDEA_Icon.svg.png?20200803071016" alt="">
+            </div>
+            <span id="edu-top">Learning or teaching programming?</span>
+            <span id="edu-cont">Try IntelliJ IDEA Edu with special support for learners and educators!</span>
+            <div id="download-button-3">
+                <span>Dowanload</span>
+            </div>
+            <div id="tar-3">
+                <span>tar.gz</span>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+    <div id="contact">
+        <div id="contact-topic">
+            <span>Tell me about new product features as they come out</span>
+        </div>
+        <div id="email">
+            <input type="text" placeholder="Email">
+        </div>
+        <span id="policy">
+            By submitting this form, I agreed to the <a href="#">JetBrains privacy 
+                Policy </a><ion-icon name="alert-circle"></ion-icon>
+        </span>
+        <div id="submit">
+            <span>Submit</span>
+        </div>
+        <span id="newsletter"><a href="#">View sample newsletter</a></span>
+        <div id="follow">Follow us</div>
+        <div id="s-media">
+            <span id="icon-name"><ion-icon name="chatbox-ellipses"></ion-icon>Community Forum</span>
+            <span id="icon-name"><ion-icon name="logo-twitter"></ion-icon>@IntelliJIDEA on Twitter</span>
+            <span id="icon-name"><ion-icon name="bug"></ion-icon>&ug and issue tracker</span>
+            <span id="icon-name"><ion-icon name="logo-facebook"></ion-icon>Facebook</span>
+            <span id="icon-name"><ion-icon name="book"></ion-icon>IntelliJ IDEA blog</span>
+            <span id="icon-name"><ion-icon name="logo-youtube"></ion-icon>Youtube</span>
+            <span id="icon-name"><ion-icon name="grid"></ion-icon>Plugin Marketplace</span>
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="footer-content">
+                <div id="products">
+                    <span id="f-topic">Products</span>
+                    <a href="#">IDEs</a>
+                    <a href="#">.NET & Visual studio</a>
+                    <a href="#">Team Tools</a>
+                    <a href="#">Plugins</a>
+                    <a href="#">Education</a>
+                    <a href="#">Languages</a>
+                    <a href="#">All products</a>
+                </div>
+                <div id="solutions">
+                    <span id="f-topic">Solutions</span>
+                    <a href="#">C++ Tools</a>
+                    <a href="#">Data Tools</a>
+                    <a href="#">DevOps<a>
+                    <a href="#">Education</a>
+                    <a href="#">Game Development</a>
+                    <a href="#">Software Development</a>
+                    <a href="#">Tools For Business</a>
+                </div>
+                <div id="initiatives">
+                    <span id="f-topic">Initiatives</span>
+                    <a href="#">Kotlin</a>
+                    <a href="#">JetBrains Mono</a>
+                    <a href="#">JetBrains Research<a>
+                    <a href="#">Open Source Projects</a>
+                </div>
+                <div id="community">
+                    <span id="f-topic">Community</span>
+                    <a href="#">Academic Licensing</a>
+                    <a href="#">Open Source Support</a>
+                    <a href="#">User Groups<a>
+                    <a href="#">Events Partnership</a>
+                    <a href="#">Developer Recognition</a>
+                </div>
+                <div id="resources">
+                    <span id="f-topic">Resources</span>
+                    <a href="#">Sales Support</a>
+                    <a href="#">Product Support</a>
+                    <a href="#">Licensing FAQ<a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Early Access</a>
+                    <a href="#">Events and Webinars</a>
+                    <a href="#">Newsletters</a>
+                    <a href="#">Industry Reports</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Desktop Art</a>
+                </div>
+                <div id="company">
+                    <span id="f-topic">Company</span>
+                    <a href="#">About</a>
+                    <a href="#">Contacts</a>
+                    <a href="#">Careers<a>
+                    <a href="#">News</a>
+                    <a href="#">Customers & Awards</a>
+                    <a href="#">Brand Assets</a>
+                    <a href="#">Partners and Resellers</a>
+                </div>
+        </div>
+        <div id="f-icons">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-twitter"></ion-icon>
+            <ion-icon name="logo-linkedin"></ion-icon>
+            <ion-icon name="logo-youtube"></ion-icon>
+            <ion-icon name="logo-instagram"></ion-icon>
+        </div>
+        <div id="f-buttons">
+            <div id="f-button"><span><ion-icon name="earth"></ion-icon>  Sri Lanka</span></div>
+            <div id="f-button"><span><ion-icon name="language"></ion-icon> English</span></div>
+        </div>
+        <span id="f-info">
+            <a href="#">Privacy & Security</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Trademark</a>
+            <a href="#">Legal</a>
+            <a href="#">Genuine Tools</a>
+        </span>
+        <span id="copyright">Copyright &COPY; 2000-2022 JetBrains s.r.o.</span>
+        <span id="developed">Developed with drive and IntelliJ IDEA</span>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
